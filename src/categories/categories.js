@@ -6,7 +6,7 @@ export const incomeCategories = [
     {type: 'Investments', amount: 0, color: incomeColors[1] },
     {type: 'Extra Incomes', amount: 0, color: incomeColors[2] },
     {type: 'Deposits', amount: 0, color: incomeColors[3] },
-    {type: 'Lottery', amount: 0, color: incomeColors[4] },
+    {type: 'Shop', amount: 0, color: incomeColors[4] },
     {type: 'Gifts', amount: 0, color: incomeColors[5] },
     {type: 'Salary', amount: 0, color: incomeColors[6] },
     {type: 'Savings', amount: 0, color: incomeColors[7] },
