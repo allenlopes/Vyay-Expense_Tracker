@@ -3,7 +3,7 @@ import { ExpenseTrackerContext } from "./context/context";
 
 import { incomeCategories, expenseCategories, resetCategories } from "./categories/categories";
 
-const useTransactions=(title) => {
+const useTransactions= (title) => {
     resetCategories();
     const { transactions } = useContext(ExpenseTrackerContext);
     const transactionsOfOneSpecificType = transactions.filter((t) => t.type === title);
@@ -13,7 +13,7 @@ const useTransactions=(title) => {
     console.log({ transactionsOfOneSpecificType, total, categories });
 
     transactionsOfOneSpecificType.forEach((t) => {
-        const category = categories.find((c) => c.type === t.category)
+        const category = categories.find((c) => c.type === t.category);
 
         if(category) category.amount += t.amount;
     });
@@ -28,7 +28,7 @@ const useTransactions=(title) => {
         labels: filteredCategories.map((c) => c.type),
     };
 
-    return { total, chartData };
+    return { filteredCategories, total, chartData };
 };
 
 export default useTransactions;
