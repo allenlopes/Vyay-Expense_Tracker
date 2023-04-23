@@ -1,12 +1,9 @@
-/* Inside of this file we will be dealing with all the logic for calculating the
-categories, the transactions and the totals and then in the Details.jsx file we will be able to fetch the data from here */
-
 import { useContext } from "react";
 import { ExpenseTrackerContext } from "./context/context";
 
 import { incomeCategories, expenseCategories, resetCategories } from "./categories/categories";
 
-const useTransactions = (title) => {
+const useTransactions=(title) => {
     resetCategories();
     const { transactions } = useContext(ExpenseTrackerContext);
     const transactionsOfOneSpecificType = transactions.filter((t) => t.type === title);
@@ -15,7 +12,7 @@ const useTransactions = (title) => {
 
     console.log({ transactionsOfOneSpecificType, total, categories });
 
-    transactionsOfOneSpecificType.forEact((t) => {
+    transactionsOfOneSpecificType.forEach((t) => {
         const category = categories.find((c) => c.type === t.category)
 
         if(category) category.amount += t.amount;
@@ -26,13 +23,13 @@ const useTransactions = (title) => {
     const chartData = {
         datasets: [{
             data: filteredCategories.map((c) => c.amount),
-            backgroundColor: filteredCategories.map((c) => c.color)
+            backgroundColor: filteredCategories.map((c) => c.color),
         }],
-        labels: filteredCategories.map((c) => c.type)
-    }
+        labels: filteredCategories.map((c) => c.type),
+    };
 
-    return { total, chartData }
-}
+    return { total, chartData };
+};
 
-export default useTransactions
+export default useTransactions;
 
