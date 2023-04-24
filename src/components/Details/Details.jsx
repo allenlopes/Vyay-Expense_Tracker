@@ -5,8 +5,8 @@ import { Doughnut } from 'react-chartjs-2';
 import useStyles from './styles'
 import useTransactions from '../../useTransactions';
 
-const DetailsCard = ({ title, subheader }) => {
-    const { total, chartData } = useTransactions(title)
+const Details = ({ title, subheader }) => {
+    const { total, chartData } = useTransactions(title);
     const classes = useStyles();
 
     return (
@@ -20,4 +20,4 @@ const DetailsCard = ({ title, subheader }) => {
     );
 };
 
-export default DetailsCard;
+export default Details;
