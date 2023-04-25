@@ -39,6 +39,10 @@ const Form = () => {
             } else if(segment.isFinal && segment.intent.intent === 'cancel_transaction') {
                 return setFormData(initialState);
             }
+
+            segment.entities.forEach((e) => {
+                console.log(e.value);
+            });
         }
     }, [segment]);
 
