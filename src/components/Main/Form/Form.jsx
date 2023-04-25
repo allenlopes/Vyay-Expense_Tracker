@@ -65,6 +65,10 @@ const Form = () => {
                         break;
                 }
             });
+
+            if(segment.isFinal && formData.amount && formData.category && formData.type && formData.date) {
+                createTransaction();
+            }
         }
     }, [segment]);
 
