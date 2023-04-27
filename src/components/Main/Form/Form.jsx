@@ -4,7 +4,7 @@ import { ExpenseTrackerContext } from '../../../context/context';
 import { v4 as uuidv4 } from 'uuid';
 import { useSpeechContext } from '@speechly/react-client';
 
-import formatDate from '../../../utils/formatDate';
+import formatDate  from '../../../utils/formatDate';
 import { incomeCategories, expenseCategories } from '../../../categories/categories';
 import useStyles from './styles';
 
@@ -22,6 +22,8 @@ const Form = () => {
     const { segment } = useSpeechContext();
 
     const createTransaction = () => {
+        if(Number.isNaN(Number(formData.amount))  || !formData.date.includes('-')) return;
+
         const transaction = { ...formData, amount: Number(formData.amount), id: uuidv4() }
 
         addTransaction(transaction);
