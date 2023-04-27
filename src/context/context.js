@@ -27,6 +27,7 @@ export const Provider = ({ children }) => {
             deleteTransaction,
             addTransaction,
             transactions,
+            balance
          }}
         >
             {children}
