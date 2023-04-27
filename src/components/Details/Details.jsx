@@ -1,5 +1,9 @@
 import React from 'react';
-import { Card, CardHeader, CardContent, Typography } from '@material-ui/core';
+import { Card }from '@material-ui/core';
+import { CardHeader } from '@material-ui/core';
+import { CardContent } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
+
 import { Doughnut } from 'react-chartjs-2';
 
 import useStyles from './styles'
