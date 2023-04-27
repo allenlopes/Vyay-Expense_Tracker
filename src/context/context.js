@@ -2,7 +2,9 @@ import React, { useReducer, createContext } from 'react';
 
 import contextReducer from './contextReducer';
 
-const initialState = [{ amount: 5, category: 'Savings', type: 'Income', date: '27-04-2023', id: '1' }];
+/* The following next line code will be fetched(from contextReducer.js) the entered type, category,amount and date if the user has already put in
+and refreshes on the next visit to the browser, or it will just leave all the fields empty if the user is visiting for the first time */
+const initialState = JSON.parse(localStorage.getItem('transactions')) || [];
 
 export const ExpenseTrackerContext = createContext(initialState);
 
