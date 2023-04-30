@@ -7,7 +7,7 @@ import { useSpeechContext } from '@speechly/react-client';
 import formatDate  from '../../../utils/formatDate';
 import useStyles from './styles';
 import { incomeCategories, expenseCategories } from '../../../categories/categories';
-import CustomizedSnackbar from '../../Snackbar/Snackbar';
+import { CustomizedSnackbar } from '../../Snackbar/Snackbar'
 
 const initialState = {
     amount: '',
@@ -75,6 +75,7 @@ const Form = () => {
                 createTransaction();
             }
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [segment]);
 
     const selectedCategories = formData.type === 'Income' ? incomeCategories : expenseCategories;

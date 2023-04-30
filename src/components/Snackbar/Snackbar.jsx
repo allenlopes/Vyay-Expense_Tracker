@@ -5,7 +5,7 @@ import MuiAlert from '@material-ui/lab/Alert';
 
 import useStyles from './styles';
 
-const CustomizedSnackbar = ({ open, setOpen }) => {
+export const CustomizedSnackbar = ({ open, setOpen }) => {
     const classes = useStyles();
 
     const handleClose = (event, reason) => {
@@ -30,4 +30,4 @@ const CustomizedSnackbar = ({ open, setOpen }) => {
   )
 }
 
-export default Snackbar
+export default Snackbar;
